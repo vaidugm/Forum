@@ -1,0 +1,171 @@
+	@media(max-width: 1421px) {
+	    .block-white.substrate {
+	        display: none;
+	    }
+	    #header {
+	        padding-top: 200px;
+	    }
+	    #servers strong {
+	        font-size: 92px;
+	    }
+	}
+	
+	@media(max-width: 997px) {
+.button-right-wrap {
+    position: relative;
+    margin: 0;
+}
+	    .video-padd-left {
+	        padding: 0 30px 30px;
+	    }
+	    .menu-main {
+	        display: none;
+	    }
+	    .mobile-menu-activate {
+	        display: block;
+	    }
+	    .left-man,
+	    .right-man {
+	        display: none;
+	    }
+	    .button-left-wrap,
+	    .button-right-wrap {
+	        margin: 0;
+	        padding: 0;
+	        display: block;
+	        width: 100%;
+	        text-align: center;
+	    }
+	    .button-right-wrap >p,
+	    .button-left-wrap >p {
+	        text-align: left;
+	        margin: 0;
+	    }
+	    .have-mods {
+	        width: 280px;
+	    }
+	    #content.mods {
+	        padding-top: 30px;
+	    }
+	}
+	
+	@media(max-width: 768px) {
+		.title {
+			font-size: 30px;
+		}
+.admins-list li {
+	font-size: 13px; 
+		}
+		
+	    body.donate-page {
+	        background: #fff
+	    }
+	    body.donate-page #content.donate {
+	        background: url(../images/bg_mobile_donate.png) no-repeat bottom center;
+	    }
+	    .button-go {
+	        margin: 0;
+	    }
+	    .offer {
+	        margin: 0 auto;
+	    }
+	    #header {
+	        background-position: left -240px;
+	        padding-top: 100px;
+	        height: 500px;
+	    }
+	    .how-to #header {
+	        height: auto
+	    }
+	    .info-how {
+	        margin-bottom: 100px;
+	    }
+	    .button-go {
+	        height: 236px;
+	    }
+	    #vk p {
+	        font-size: 30px;
+	    }
+	    .man {
+	        right: 160px;
+	    }
+	    #footer p strong {
+	        margin: 20px 0 10px;
+	    }
+	    #footer {
+	        text-align: center;
+	    }
+	    .url-list.social {
+	        text-align: center;
+	    }
+	    #vk .but-main.dark {
+	        float: right;
+	    }
+	    #vk p {
+	        text-align: right;
+	    }
+	    .left_mid {
+	        padding-right: 0;
+	    }
+	    .right_mid {
+	        padding-left: 0;
+	    }
+	    .person {
+	        height: auto;
+	        text-align: center;
+	        padding: 40px;
+	    }
+	    .user-info {
+	        display: block;
+	        clear: both;
+	    }
+	    .lvl {
+	        display: none;
+	    }
+	    .skin-circe {
+	        left: 50%;
+	        margin-left: -70px;
+	    }
+	    #lvl-progress {
+	        left: 50%;
+	        margin-left: -85px;
+	    }
+	    #lvl-progress .progressbar-text {
+	        margin-left: -77px !important;
+	        font-weight: bold;
+	        margin-bottom: -7px !important;
+	        font-size: 10px;
+	        padding: 2px !important;
+	        background: rgb(21, 112, 160);
+	        line-height: 9px;
+	        border-radius: 4px;
+	    }
+	    .circle-gun {
+	        margin: 10px auto 30px;
+	    }
+	    .buttons-bar {
+	        text-align: center;
+	    }
+	    .guns-bar {
+	        text-align: center;
+	    }
+	    .gun {
+	        margin: 5px;
+	    }
+	    .cabinet-wrap.protect {
+	        text-align: center;
+	    }
+	    .left-title {
+	        padding-right: 0px;
+	        text-align: center;
+	    }
+	    .left-title h2 {
+	        text-align: center;
+	    }
+	    .but-main.dark {
+	        min-width: 220px;
+	    }
+	    #login .title {
+	        margin: 20px 0;
+	    }
+	}
