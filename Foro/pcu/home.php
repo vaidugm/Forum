@@ -1,68 +1,73 @@
-<?php
-session_start();
-include('./config/db_config.php');
-$datos= mysqli_query($conexion, "SELECT * FROM usuarios WHERE Username = '".$_SESSION['name']."' ");
-$datos=mysqli_fetch_array($datos);
-$nombre=$datos['Username'];
-$coins=$datos['Coin'];
-$dinero=$datos['Money'];
-$playerlevel=$datos['Nivel'];
-$email=$datos['Email'];
-$register=$datos['Registro_U'];
-$timeplay=$datos['Conexion'];
-$gender=$datos['Sexo'];
-$dinerobanco=$datos['Banco'];
-$skinid = $datos['Skin'];
-$telefono = $datos['Numero'];
-$vip = $datos['VIP'];
-$hambre = $datos['Hambre'];
-$sed = $datos['Sed'];
-$vida = $datos['Vida'];
-$armadura = $datos['Chaleco'];
+<?php 
+   session_start();
+
+   include("php/config.php");
+   if(!isset($_SESSION['valid'])){
+    header("Location: index.php");
+   }
 ?>
 <!DOCTYPE html>
-<html>
-  <head>
-    <title>TroutZone RP PCU</title>
-    
-  </head>
-  <body>
-    <h1>PCU del usuario</h1>
-    <div class="container">
-      <hr>
-      <div class="left">
-        <h2>Nombre del Jugador: <?php if(isset($nombre)) { ?> <?=$nombre ?? ""?> <?php } ?></h2>
-        <h2>Fecha de registro:<?php if(isset($register)) { ?> <?=$register ?? ""?> <?php } ?></h2>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style/style.css">
+    <title>SantaCruz | Inicio</title>
+</head>
+<body>
+    <div class="nav">
+        <div class="logo">
+            <p><a href="home.php">Panel de Usuarios</a> </p>
+        </div>
 
-<h2>Tiempo Jugado:<?php if(isset($timeplay)) { ?> <?=$timeplay ?? ""?> <?php } ?></h2>
-        <h2>VIP: <?php if($vip == 0){ echo "No tienes vip";} else { echo "Tienes VIP";} ?></h2>
-        <h2>Monedas:<?php if(isset($coins)) { ?> <?=$coins ?? ""?> <?php } ?></h2>
-      </div>
-      <div class="right">
-        <h2>Dinero en Mano:<?php if(isset($dinero)) { ?> <?=$dinero ?? ""?> <?php } ?></h2>
-        <h2>Dinero en Banco:<?php if(isset($dinerobanco)) { ?> <?=$dinerobanco ?? ""?> <?php } ?></h2>
-        <h2>Numero de telefono:<?php if(isset($telefono)) { ?> <?=$telefono ?? ""?> <?php } ?></h2>
-        <h2>Nivel:<?php if(isset($playerlevel)) { ?> <?=$playerlevel ?? ""?> <?php } ?></h2>
-        <h2><?php if ($gender == 0){echo "<h2>Genero: Masculino</h2>";}else {echo "<h2>Genero: Femenino</h2>";}?> </h2>
+        <div class="right-links">
+
+            <?php 
+            
+            $id = $_SESSION['id'];
+            $query = mysqli_query($con,"SELECT*FROM usuarios WHERE ID=$id");
+
+            while($result = mysqli_fetch_assoc($query)){
+                $res_Uname = $result['Username'];
+                $res_Email = $result['Email'];
+                $res_Age = $result['Edad'];
+                $res_id = $result['ID'];
+                $res_Level = $result['Nivel'];
+                $res_Vida = $result['Vida'];
+                $res_Chale = $result['Chaleco'];
+            }
+            
+            echo "<a href='edit.php?Id=$res_id'>Configuracion</a>";
+            ?>
+
+            <a href="php/logout.php"> <button class="btn">Salir</button> </a>
+
+        </div>
     </div>
-    <div class="progress-container">
-  <div class="progress-bar" id="hambre">
-    <div class="progress-label">Hambre</div>
-    <progress value="<?php echo $hambre; ?>" max="100"></progress>
-  </div>
-  <div class="progress-bar" id="sed">
-    <div class="progress-label">Sed</div>
-    <progress value="<?php echo $sed; ?>" max="100"></progress>
-  </div>
-  <div class="progress-bar" id="vida">
-    <div class="progress-label">Vida</div>
-    <progress value="<?php echo $vida; ?>" max="100"></progress>
-  </div>
-  <div class="progress-bar" id="armadura">
-    <div class="progress-label">Armadura</div>
-    <progress value="<?php echo $armadura; ?>" max="100"></progress>
-  </div>
-</div>
+    <main>
 
-  </body>
+       <div class="main-box top">
+          <div class="top">
+            <div class="box">
+                <p>Hola <b><?php echo $res_Uname ?></b>, Este es el panel de tu personaje</p>
+            </div>
+            <div class="box">
+                <p>Tu correo es <b><?php echo $res_Email ?></b>.</p>
+            </div>
+            
+          </div>
+          <div class="bottom">
+            <div class="box">
+                <p><b>Informacion Basica</b>.</p>
+                <p>La edad de tu personaje es <b><?php echo $res_Age ?> </b>.</p>
+                <p>Tu nivel es <b><?php echo $res_Level ?></b>.</p>
+                <p>La vida de tu personaje es de <b><?php echo $res_Vida ?></b>.</p>
+                <p>El chaleco de tu personaje es de  <b><?php echo $res_Chale ?></b>.</p> 
+            </div>
+          </div>
+       </div>
+
+    </main>
+</body>
 </html>

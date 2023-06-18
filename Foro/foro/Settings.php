@@ -101,25 +101,25 @@ $db_port = 0;
  *
  * @var string
  */
-$db_server = 'sql301.infinityfree.com';
+$db_server = 'localhost';
 /**
  * The database name
  *
  * @var string
  */
-$db_name = 'if0_34355718_foro';
+$db_name = 'foro';
 /**
  * Database username
  *
  * @var string
  */
-$db_user = 'if0_34355718';
+$db_user = 'root';
 /**
  * Database password
  *
  * @var string
  */
-$db_passwd = 'JNGO3K6UkMo';
+$db_passwd = '';
 /**
  * Database user for when connecting with SSI
  *
