@@ -46,7 +46,6 @@
         </div>
     </div>
     <main>
-
        <div class="main-box top">
           <div class="top">
             <div class="box">
